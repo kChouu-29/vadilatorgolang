@@ -1,0 +1,205 @@
+# Phiên bản OpenAPI
+openapi: 3.0.0
+
+# Thông tin chung về API
+info:
+  title: User API
+  description: API để quản lý người dùng (user) trong dự án vadilatorgolang.
+  version: 1.0.0
+
+# (Tùy chọn) Máy chủ API của bạn
+servers:
+  - url: http://localhost:8080/ # Giả sử server chạy ở đây
+    description: Máy chủ phát triển (development)
+
+# Gắn tag để nhóm các API lại
+tags:
+  - name: User
+    description: Các API liên quan đến Người dùng
+
+# Định nghĩa các đường dẫn (endpoints)
+paths:
+  # Path 1: /user
+  /user:
+    # Method: POST /user
+    post:
+      tags: [User] # Gắn tag
+      summary: Tạo một user mới
+      description: Nhận thông tin user mới và lưu vào cơ sở dữ liệu.
+      requestBody:
+        description: Dữ liệu của user mới cần tạo.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserRequest' # Tham chiếu đến schema bên dưới
+      responses:
+        '201': # 201 Created - Tạo thành công
+          description: Tạo user thành công. Trả về thông tin user vừa tạo.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '400': # 400 Bad Request - Dữ liệu gửi lên sai
+          description: Dữ liệu không hợp lệ 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    # Method: GET /user
+    get:
+      tags: [User]
+      summary: Lấy danh sách tất cả user
+      description: Trả về một mảng chứa tất cả user có trong hệ thống.
+      responses:
+        '200': # 200 OK - Thành công
+          description: Lấy danh sách user thành công.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserResponse'
+
+  # Path 2: /user/{id}
+  /user/{id}:
+    # Định nghĩa tham số {id} trên đường dẫn
+    parameters:
+      - name: id
+        in: path # Nằm trên đường dẫn
+        description: ID của user cần thao tác
+        required: true
+        schema:
+          type: string
+          example: "123e4567-e89b-12d3-a456-426614174000" # Có thể là số hoặc UUID
+
+    # Method: GET /user/{id}
+    get:
+      tags: [User]
+      summary: Lấy thông tin user theo ID
+      description: Trả về thông tin chi tiết của một user dựa vào ID.
+      responses:
+        '200':
+          description: Lấy thông tin user thành công.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '404': # 404 Not Found - Không tìm thấy
+          description: Không tìm thấy user với ID cung cấp.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    # Method: PUT /user/{id}
+    put:
+      tags: [User]
+      summary: Cập nhật thông tin user
+      description: Cập nhật thông tin cho user có ID tương ứng.
+      requestBody:
+        description: Dữ liệu user cần cập nhật.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest' # Dùng schema riêng cho update
+      responses:
+        '200':
+          description: Cập nhật user thành công.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '400':
+          description: Dữ liệu không hợp lệ.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Không tìm thấy user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    # Method: DELETE /user/{id}
+    delete:
+      tags: [User]
+      summary: Xóa user
+      description: Xóa user có ID tương ứng khỏi hệ thống.
+      responses:
+        '204': # 204 No Content - Xóa thành công, không trả về nội dung
+          description: Xóa user thành công.
+        '404':
+          description: Không tìm thấy user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+# Định nghĩa các cấu trúc dữ liệu (schemas) dùng chung
+components:
+  schemas:
+    # Schema cho dữ liệu trả về (không có password)
+    UserResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        username:
+          type: string
+          example: "khanhchauu"
+        email:
+          type: string
+          format: email
+          example: "khanhchauu@example.com"
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    # Schema cho request tạo user (có password, không có id)
+    NewUserRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          example: "khanhchauu"
+        email:
+          type: string
+          format: email
+          example: "khanhchauu@example.com"
+        password:
+          type: string
+          format: password
+          example: "s3cr3tP@ssword"
+      required:
+        - username
+        - email
+        - password
+
+    # Schema cho request cập nhật user (các trường đều là tùy chọn)
+    UpdateUserRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          example: "khanhchauu_new"
+        email:
+          type: string
+          format: email
+          example: "khanhchauu.new@example.com"
+
+    # Schema chung cho các lỗi
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Không tìm thấy user"
