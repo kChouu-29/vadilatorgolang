@@ -11,10 +11,7 @@ var (
 	usernameRegex = regexp.MustCompile("^[a-zA-Z0-9_]+$")
 )
 
-// BỎ HÀM INIT() ĐI
 
-// THÊM HÀM PUBLIC NÀY
-// RegisterCustomValidations sẽ đăng ký tất cả các quy tắc của bạn
 func RegisterCustomValidations() {
 	err := validate.RegisterValidation("username_chars", validateUsernameChars)
 	if err != nil {

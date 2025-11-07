@@ -1,0 +1,3 @@
+ERROR: 2025/11/06 22:41:59 logger.go:48: Logger Lỗi đã khởi tạo.
+ERROR: 2025/11/06 22:42:37 handler.go:83: Lỗi GetUserByID 1: sql: no rows in result set. Request: GET /user/1
+ERROR: 2025/11/06 23:03:05 handler.go:208: Lỗi Validation: map[Age:Age must be greater than or equal 18]. Request: POST /user

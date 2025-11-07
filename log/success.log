@@ -1,0 +1,8 @@
+SUCCESS: 2025/11/06 22:41:59 logger.go:47: Logger Thành Công đã khởi tạo.
+SUCCESS: 2025/11/06 22:41:59 main.go:27: Kết nối database thành công.
+SUCCESS: 2025/11/06 22:41:59 main.go:30: Đã đăng ký custom validators.
+SUCCESS: 2025/11/06 22:41:59 main.go:42: Server đang chạy tại http://localhost:8080
+SUCCESS: 2025/11/06 22:42:24 handler.go:105: Lấy tất cả user thành công. Request: GET /user
+SUCCESS: 2025/11/06 22:56:09 handler.go:105: Lấy tất cả user thành công. Request: GET /user
+SUCCESS: 2025/11/06 22:56:18 handler.go:161: Xóa user thành công. Request: DELETE /user/2
+SUCCESS: 2025/11/06 23:03:15 handler.go:60: Tạo user thành công. Request: POST /user
