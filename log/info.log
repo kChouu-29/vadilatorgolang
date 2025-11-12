@@ -1,0 +1,23 @@
+INFO: 2025/11/07 16:58:42 logger.go:65: Logger hệ thống đã được khởi tạo thành công.
+INFO: 2025/11/07 16:58:42 main.go:16: Khởi tạo logger hoàn tất.
+INFO: 2025/11/07 16:58:42 main.go:25: Kết nối database thành công.
+INFO: 2025/11/07 16:58:42 main.go:43: Server đang chạy tại http://localhost:8080
+INFO: 2025/11/07 16:59:06 handler.go:113: Lấy tất cả user thành công (4 user). Request: GET /user
+INFO: 2025/11/07 17:01:03 handler.go:60: Tạo user thành công: &{ID:0 UserName:sssssszs Email:khdanch@gmail.com Age:33 CreatedAt:2025-11-07 17:01:03.3872855 +0700 +07 m=+140.517981001}. Request: POST /user
+INFO: 2025/11/07 17:45:11 logger.go:65: Logger hệ thống đã được khởi tạo thành công.
+INFO: 2025/11/07 17:45:11 main.go:16: Khởi tạo logger hoàn tất.
+INFO: 2025/11/07 17:45:11 main.go:25: Kết nối database thành công.
+INFO: 2025/11/07 17:45:11 main.go:43: Server đang chạy tại http://localhost:8080
+INFO: 2025/11/07 18:06:01 logger.go:65: Logger hệ thống đã được khởi tạo thành công.
+INFO: 2025/11/07 18:06:01 main.go:16: Khởi tạo logger hoàn tất.
+INFO: 2025/11/07 18:06:01 main.go:25: Kết nối database thành công.
+INFO: 2025/11/07 18:06:01 main.go:43: Server đang chạy tại http://localhost:8080
+INFO: 2025/11/07 18:06:21 handler.go:60: Tạo user thành công: &{ID:0 UserName:sssssszs34 Email:khdandch@gmail.com Age:20 CreatedAt:2025-11-07 18:06:21.0739372 +0700 +07 m=+19.189508301}. Request: POST /user
+INFO: 2025/11/07 18:21:54 logger.go:65: Logger hệ thống đã được khởi tạo thành công.
+INFO: 2025/11/07 18:21:54 main.go:16: Khởi tạo logger hoàn tất.
+INFO: 2025/11/07 18:21:54 main.go:40: Kết nối database thành công.
+INFO: 2025/11/07 18:21:54 main.go:58: Server đang chạy tại http://localhost:8080
+INFO: 2025/11/07 18:39:28 logger.go:65: Logger hệ thống đã được khởi tạo thành công.
+INFO: 2025/11/07 18:39:28 main.go:16: Khởi tạo logger hoàn tất.
+INFO: 2025/11/07 18:39:28 main.go:40: Kết nối database thành công.
+INFO: 2025/11/07 18:39:28 main.go:58: Server đang chạy tại http://localhost:8080

@@ -53,7 +53,7 @@ func (u *UserController) GetUserByID(id int) (*User, error) {
 
 // Update
 func (u *UserController) UpdateUserByID(user *User) error {
-	// (Tương tự, logic kiểm tra update sẽ ở đây)
+	
 	return u.Repo.UpdateUserByID(user)
 }
 

@@ -1,0 +1,17 @@
+DEBUG: 2025/11/07 16:58:42 main.go:29: Đã đăng ký custom validators.
+DEBUG: 2025/11/07 16:58:42 main.go:39: Đã khởi tạo router.
+DEBUG: 2025/11/07 17:00:34 handler.go:39: Body sau decode: {UserName:sssssss Email:khdanh@gmail.com Age:33}
+DEBUG: 2025/11/07 17:00:59 handler.go:39: Body sau decode: {UserName:sssssszs Email:khdanh@gmail.com Age:33}
+DEBUG: 2025/11/07 17:01:03 handler.go:39: Body sau decode: {UserName:sssssszs Email:khdanch@gmail.com Age:33}
+DEBUG: 2025/11/07 17:25:34 handler.go:39: Body sau decode: {UserName:sssssszs Email:khdanch@gmail.com Age:33}
+DEBUG: 2025/11/07 17:29:18 handler.go:39: Body sau decode: {UserName:sssssszs Email:khdanch@gmail.com Age:0}
+DEBUG: 2025/11/07 17:29:45 handler.go:39: Body sau decode: {UserName:sssssszs@ Email:khdanch@gmail.com Age:0}
+DEBUG: 2025/11/07 17:45:11 main.go:29: Đã đăng ký custom validators.
+DEBUG: 2025/11/07 17:45:11 main.go:39: Đã khởi tạo router.
+DEBUG: 2025/11/07 18:06:01 main.go:29: Đã đăng ký custom validators.
+DEBUG: 2025/11/07 18:06:01 main.go:39: Đã khởi tạo router.
+DEBUG: 2025/11/07 18:06:21 handler.go:39: Body sau decode: {UserName:sssssszs34 Email:khdandch@gmail.com Age:20}
+DEBUG: 2025/11/07 18:21:54 main.go:44: Đã đăng ký custom validators.
+DEBUG: 2025/11/07 18:21:54 main.go:54: Đã khởi tạo router.
+DEBUG: 2025/11/07 18:39:28 main.go:44: Đã đăng ký custom validators.
+DEBUG: 2025/11/07 18:39:28 main.go:54: Đã khởi tạo router.

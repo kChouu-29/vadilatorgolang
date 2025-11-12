@@ -1,0 +1,2 @@
+WARN: 2025/11/07 17:29:45 handler.go:228: Lỗi Validation: map[UserName:Trường 'UserName' chỉ được chứa chữ cái, số và dấu gạch dưới]. Request: POST /user
+WARN: 2025/11/07 17:45:46 handler.go:81: ID must be positive: -1. Request: GET /user/-1

@@ -71,7 +71,7 @@ paths:
         description: ID của user cần thao tác
         required: true
         schema:
-          type: string
+          type: integer
           example: "123e4567-e89b-12d3-a456-426614174000" # Có thể là số hoặc UUID
 
     # Method: GET /user/{id}
